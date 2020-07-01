@@ -1,0 +1,5 @@
+Bore Prodanovica 6,Novi Sad,Srbija
+Petra Drapsina 10,Novi Sad,Srbija
+Danila Kisa 23,Novi Sad,Srbija
+Fruskogorska 17,Novi Sad,Srbija
+Balzakova 15,Novi Sad,Srbija
