@@ -11,14 +11,14 @@ IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblGender
 	drop table tblGender;
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblLocation')
 	drop table tblLocation;
-IF EXISTS(select * FROM sys.views where name = 'vwLocation')
-	drop view vwLocation;
-IF EXISTS(select * FROM sys.views where name = 'vwGender')
-	drop view vwGender;
-IF EXISTS(select * FROM sys.views where name = 'vwSector')
-	drop view vwSector;
 IF EXISTS(select * FROM sys.views where name = 'vwEmployee')
 	drop view vwEmployee;
+IF EXISTS(select * FROM sys.views where name = 'vwSector')
+	drop view vwSector;
+IF EXISTS(select * FROM sys.views where name = 'vwGender')
+	drop view vwGender;
+IF EXISTS(select * FROM sys.views where name = 'vwLocation')
+	drop view vwLocation;
 
 --Creating a table of locations
 use Employee_Data

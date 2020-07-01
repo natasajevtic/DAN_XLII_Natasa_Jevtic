@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Employee_DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Employee_DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblEmployee">
           <Key>
             <PropertyRef Name="EmployeeID" />
@@ -116,7 +116,7 @@ warning 6002: The table/view 'Employee_Data.dbo.vwSector' does not have a primar
           <Property Name="SectorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SectorName" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tblEmploy__Gende__0A9D95DB">
+        <Association Name="FK__tblEmploy__Gende__31B762FC">
           <End Role="tblGender" Type="Self.tblGender" Multiplicity="1" />
           <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -128,7 +128,7 @@ warning 6002: The table/view 'Employee_Data.dbo.vwSector' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblEmploy__Locat__0C85DE4D">
+        <Association Name="FK__tblEmploy__Locat__339FAB6E">
           <End Role="tblLocation" Type="Self.tblLocation" Multiplicity="1" />
           <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -140,7 +140,7 @@ warning 6002: The table/view 'Employee_Data.dbo.vwSector' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblEmploy__Manag__0D7A0286">
+        <Association Name="FK__tblEmploy__Manag__3493CFA7">
           <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="0..1" />
           <End Role="tblEmployee1" Type="Self.tblEmployee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -152,7 +152,7 @@ warning 6002: The table/view 'Employee_Data.dbo.vwSector' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblEmploy__Secto__0B91BA14">
+        <Association Name="FK__tblEmploy__Secto__32AB8735">
           <End Role="tblSector" Type="Self.tblSector" Multiplicity="1" />
           <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -210,25 +210,24 @@ warning 6002: The table/view 'Employee_Data.dbo.vwSector' does not have a primar
     [vwSector].[SectorName] AS [SectorName]
     FROM [dbo].[vwSector] AS [vwSector]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__tblEmploy__Gende__0A9D95DB" Association="Self.FK__tblEmploy__Gende__0A9D95DB">
+          <AssociationSet Name="FK__tblEmploy__Gende__31B762FC" Association="Self.FK__tblEmploy__Gende__31B762FC">
             <End Role="tblGender" EntitySet="tblGender" />
             <End Role="tblEmployee" EntitySet="tblEmployee" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblEmploy__Locat__0C85DE4D" Association="Self.FK__tblEmploy__Locat__0C85DE4D">
+          <AssociationSet Name="FK__tblEmploy__Locat__339FAB6E" Association="Self.FK__tblEmploy__Locat__339FAB6E">
             <End Role="tblLocation" EntitySet="tblLocation" />
             <End Role="tblEmployee" EntitySet="tblEmployee" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblEmploy__Manag__0D7A0286" Association="Self.FK__tblEmploy__Manag__0D7A0286">
+          <AssociationSet Name="FK__tblEmploy__Manag__3493CFA7" Association="Self.FK__tblEmploy__Manag__3493CFA7">
             <End Role="tblEmployee" EntitySet="tblEmployee" />
             <End Role="tblEmployee1" EntitySet="tblEmployee" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblEmploy__Secto__0B91BA14" Association="Self.FK__tblEmploy__Secto__0B91BA14">
+          <AssociationSet Name="FK__tblEmploy__Secto__32AB8735" Association="Self.FK__tblEmploy__Secto__32AB8735">
             <End Role="tblSector" EntitySet="tblSector" />
             <End Role="tblEmployee" EntitySet="tblEmployee" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Employee_DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
