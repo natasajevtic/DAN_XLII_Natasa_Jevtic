@@ -123,10 +123,23 @@ namespace Zadatak_1.ViewModels
         {
             return true;
         }
-
+        /// <summary>
+        /// This method invokes a method for opening a window for editing employee.
+        /// </summary>
         public void EditEmployeeExecute()
         {
-            
+            try
+            {
+                EditEmployeeView editUser = new EditEmployeeView();
+                editUser.ShowDialog();
+                //invokes method to update a list of users
+                EmployeeList = employees.GetAllEmployees();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         public bool CanEditEmployeeExecute()
