@@ -54,7 +54,7 @@ PhoneNumber varchar(13) UNIQUE NOT NULL,
 Sector int FOREIGN KEY REFERENCES tblSector(SectorID) NOT NULL,
 LocationID int FOREIGN KEY REFERENCES tblLocation(LocationID) NOT NULL,
 Manager int FOREIGN KEY REFERENCES tblEmployee(EmployeeID),
-CONSTRAINT CHK_DateOfBirth CHECK(DATEDIFF(day,DateOfBirth,GETDATE())>= 5844),
+CONSTRAINT CHK_DateOfBirth CHECK(DATEDIFF(day,DateOfBirth,GETDATE())>= 5479),
 CONSTRAINT CHK_JMBG CHECK(LEN(JMBG)=13 AND ISNUMERIC(JMBG)=1),
 CONSTRAINT CHK_PhoneNumber CHECK(PhoneNumber LIKE'+3816[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' OR PhoneNumber LIKE '+3816[0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 );
