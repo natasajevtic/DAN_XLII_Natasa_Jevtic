@@ -34,9 +34,10 @@ namespace Zadatak_1.Validations
         public bool ValidationForUnique(string iDCardNumber, string jmbg, string phoneNumber)
         {
             Employees employees = new Employees();
-            List<vwEmployee> employeeList = employees.GetAllEmployees();
+            List<vwEmployee> employeeList = employees.GetAllEmployees();            
+            var list = employeeList.Where(x => x.JMBG != jmbg).ToList();
             //if already exists forwarded ID card number or JMBG or phone number in database
-            if (employeeList.Any(x => x.NumberOfIdentityCard == iDCardNumber) || employeeList.Any(x => x.JMBG == jmbg) || employeeList.Any(x => x.PhoneNumber == phoneNumber))
+            if (list.Any(x => x.NumberOfIdentityCard == iDCardNumber) || list.Any(x => x.JMBG == jmbg) || list.Any(x => x.PhoneNumber == phoneNumber))
             {
                 return false;
             }
