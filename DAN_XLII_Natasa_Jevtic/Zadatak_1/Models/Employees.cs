@@ -117,10 +117,19 @@ namespace Zadatak_1.Models
                     }
                     //finding employee with forwarded id
                     tblEmployee employeeToDelete = context.tblEmployees.Where(x => x.EmployeeID == employeeID).FirstOrDefault();
+                    //if that employee was the only in the sector, deleting sector
+                    var peopleInSector = context.tblEmployees.Where(x => x.Sector == employeeToDelete.Sector).ToList();
+                    if (peopleInSector.Count()==1)
+                    {
+                        var sector = context.tblSectors.Where(x => x.SectorID == employeeToDelete.Sector).FirstOrDefault();
+                        context.tblSectors.Remove(sector);
+                        context.SaveChanges();
+                        LogAction("Sector " + sector.SectorName + " with ID: " + sector.SectorID + " deleted.");
+                    }
                     //removing employee from DbSet and saving changes to database
-                    context.tblEmployees.Remove(employeeToDelete);
+                    context.tblEmployees.Remove(employeeToDelete);                    
+                    context.SaveChanges();
                     LogAction("Employee with ID " + employeeToDelete.EmployeeID + " deleted.");
-                    context.SaveChanges();                    
                 }
             }
             catch (Exception ex)
