@@ -65,6 +65,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Calculations.cs" />
+    <Compile Include="Validations\Validation.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,15 +81,48 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Employees.cs" />
     <Compile Include="Models\Employee_Data_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Employee_Data_Model.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Employee_Data_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee_Data_Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Employee_Data_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Genders.cs" />
+    <Compile Include="Models\Locations.cs" />
+    <Compile Include="Models\Sectors.cs" />
+    <Compile Include="Models\tblEmployee.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblGender.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLocation.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSector.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwEmployee.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwGender.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwLocation.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwSector.cs">
+      <DependentUpon>Employee_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -127,6 +162,12 @@
     <Content Include="Models\Employee_Data_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Employee_Data_Model.Context.cs</LastGenOutput>
+      <DependentUpon>Employee_Data_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Employee_Data_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Employee_Data_Model.edmx</DependentUpon>
+      <LastGenOutput>Employee_Data_Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
