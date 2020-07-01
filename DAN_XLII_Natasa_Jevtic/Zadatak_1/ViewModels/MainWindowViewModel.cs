@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using Zadatak_1.Commands;
 using Zadatak_1.Models;
+using Zadatak_1.Views;
 
 namespace Zadatak_1.ViewModels
 {
@@ -132,10 +133,21 @@ namespace Zadatak_1.ViewModels
         {
             return true;
         }
-
+        /// <summary>        
+        /// This method invokes a method for opening a window for adding employees.        
+        /// </summary>
         public void AddEmployeeExecute()
         {
-            
+            try
+            {
+                AddEmployeeView addEmployee = new AddEmployeeView();
+                addEmployee.ShowDialog();
+                EmployeeList = employees.GetAllEmployees();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         public bool CanAddEmployeeExecute()
