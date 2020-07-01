@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Zadatak_1.Models
 {
-    class Employees
+    class Employees : Logger
     {
         /// <summary>
         /// This method adds employee to DbSet and then save changes to database.
@@ -33,6 +33,7 @@ namespace Zadatak_1.Models
                     context.tblEmployees.Add(employee);
                     context.SaveChanges();
                     employeeToAdd.EmployeeID = employee.EmployeeID;
+                    LogAction("Employee " + employeeToAdd.Employee + " created. ID: " + employeeToAdd.EmployeeID + " JMBG: " + employeeToAdd.JMBG);
                 }
             }
             catch (Exception ex)
@@ -82,7 +83,8 @@ namespace Zadatak_1.Models
                     employeeToEdit.Sector = employee.Sector;
                     employeeToEdit.LocationID = employee.LocationID;
                     employeeToEdit.Manager = employee.Manager;
-                    context.SaveChanges();                    
+                    context.SaveChanges();
+                    LogAction("Employee with ID " + employeeToEdit.EmployeeID + " updated.");
                     return employee;
                 }
             }
@@ -110,12 +112,14 @@ namespace Zadatak_1.Models
                         foreach (var employee in employeeOfThisManager)
                         {
                             employee.Manager = null;
+                            LogAction("Employee with ID " + employee.EmployeeID + " updated so he has no manager.");
                         }
                     }
                     //finding employee with forwarded id
                     tblEmployee employeeToDelete = context.tblEmployees.Where(x => x.EmployeeID == employeeID).FirstOrDefault();
                     //removing employee from DbSet and saving changes to database
                     context.tblEmployees.Remove(employeeToDelete);
+                    LogAction("Employee with ID " + employeeToDelete.EmployeeID + " deleted.");
                     context.SaveChanges();                    
                 }
             }

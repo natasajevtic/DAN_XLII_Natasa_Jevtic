@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Zadatak_1.Models
 {
-    class Sectors
+    class Sectors : Logger
     {
         /// <summary>
         /// This method adds sectors to DbSet and then save changes to database.
@@ -21,7 +21,8 @@ namespace Zadatak_1.Models
                         SectorName = sectorToAdd
                     };
                     context.tblSectors.Add(sector);
-                    context.SaveChanges();                    
+                    context.SaveChanges();
+                    LogAction("Sector " + sector.SectorName + " with ID " + sector.SectorID + " created.");
                 }
             }
             catch (Exception ex)

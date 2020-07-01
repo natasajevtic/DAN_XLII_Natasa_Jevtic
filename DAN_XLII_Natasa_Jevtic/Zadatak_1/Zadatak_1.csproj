@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="Calculations\Calculations.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Models\Logger.cs" />
     <Compile Include="Validations\Validation.cs" />
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
